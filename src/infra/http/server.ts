@@ -2,6 +2,8 @@ import cors from "cors";
 import express from "express";
 
 import { connectToMongo } from "@infra/mongodb/connect-mongo";
+import "../container";
+import { router } from "./routes";
 
 const PORT = process.env.PORT || 3000;
 
@@ -10,6 +12,7 @@ async function startServer() {
 
   app.use(express.json());
   app.use(cors());
+  app.use(router);
 
   console.log("MongoDb - Connecting...");
 

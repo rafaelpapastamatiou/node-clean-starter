@@ -1,4 +1,4 @@
-import { Handler } from "express";
+import { RequestHandler } from "express";
 
 import { Controller } from "@application/protocols/controller.protocol";
 import { Exception } from "@application/protocols/exception.protocol";
@@ -9,7 +9,7 @@ import {
 import { getExceptionStatusCode } from "@infra/helpers/get-exception-status-code";
 
 export class ExpressRouteAdapter {
-  static async adapt(controller: Controller): Promise<Handler> {
+  static adapt(controller: Controller): RequestHandler {
     return async (req, res) => {
       const httpRequest = new HttpRequest({
         body: req.body,

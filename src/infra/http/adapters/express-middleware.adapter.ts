@@ -1,4 +1,4 @@
-import { Handler } from "express";
+import { RequestHandler } from "express";
 
 import { Exception } from "@application/protocols/exception.protocol";
 import {
@@ -9,7 +9,7 @@ import { Middleware } from "@application/protocols/middleware.protocol";
 import { getExceptionStatusCode } from "@infra/helpers/get-exception-status-code";
 
 export class ExpressMiddlewareAdapter {
-  async adapt(middleware: Middleware): Promise<Handler> {
+  static adapt(middleware: Middleware): RequestHandler {
     return async (req, res, next) => {
       const httpRequest = new HttpRequest({
         body: req.body,
