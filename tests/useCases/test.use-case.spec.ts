@@ -1,6 +1,5 @@
 import "reflect-metadata";
 import { container, DependencyContainer } from "tsyringe";
-import { beforeAll, describe, expect, test, vitest } from "vitest";
 
 import { TestUseCase } from "@application/useCases/test.use-case";
 import { TestRepository } from "@domain/repositories/test.repository";
@@ -23,7 +22,7 @@ describe("TestUseCase", () => {
     const testRepositoryStub =
       childContainer.resolve<TestRepository>("TestRepository");
 
-    const testRepositorySpy = vitest.spyOn(testRepositoryStub, "find");
+    const testRepositorySpy = jest.spyOn(testRepositoryStub, "find");
 
     await testUseCase.execute();
 

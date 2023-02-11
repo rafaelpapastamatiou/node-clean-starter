@@ -9,6 +9,7 @@ export async function connectMongoMemoryServer() {
 
   const uri = mongoServer.getUri();
 
+  mongoose.set("strictQuery", false);
   await mongoose.connect(uri);
 }
 

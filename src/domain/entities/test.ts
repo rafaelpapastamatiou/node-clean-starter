@@ -2,7 +2,7 @@ import { modelOptions, prop } from "@typegoose/typegoose";
 
 @modelOptions({
   schemaOptions: {
-    collection: "tests",
+    collection: "test",
   },
 })
 export class Test {

@@ -1,6 +1,5 @@
 import "reflect-metadata";
 import { container, DependencyContainer } from "tsyringe";
-import { beforeAll, describe, expect, test, vitest } from "vitest";
 
 import { TestUseCaseInterface } from "@application/useCases/test.use-case";
 import { TestController } from "@infra/http/controllers/test.controller";
@@ -23,7 +22,7 @@ describe("TestController", () => {
     const testUseCaseStub =
       childContainer.resolve<TestUseCaseInterface>("TestUseCase");
 
-    const testUseCaseSpy = vitest.spyOn(testUseCaseStub, "execute");
+    const testUseCaseSpy = jest.spyOn(testUseCaseStub, "execute");
     const response = await testController.handle({
       body: { email: "johndoe@email.com", name: "john" },
       params: {},
