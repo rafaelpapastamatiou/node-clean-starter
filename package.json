@@ -7,8 +7,8 @@
     "doc:generate": "ts-node --swc -r tsconfig-paths/register ./generate-swagger-file",
     "build": "rm -rf ./dist && swc ./src -d ./dist",
     "test": "jest --passWithNoTests",
-    "test:w": "jest -- --watch",
-    "coverage": "jest -- --coverage",
+    "test:w": "jest --watchAll",
+    "coverage": "jest --coverage",
     "commit": "git-cz",
     "prepare": "husky install"
   },
