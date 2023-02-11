@@ -1,0 +1,5 @@
+{
+  "ignore": ["tests/**", "src/docs/**", "node_modules/**"],
+  "ext": "ts,json"
+
+}

@@ -3,7 +3,7 @@ import path from "path";
 import { generateSwaggerFile } from "swagger-decorators";
 
 export async function run() {
-  const docsDirectoryPath = path.join(__dirname, "src", "shared", "docs");
+  const docsDirectoryPath = path.join(__dirname, "src", "docs");
 
   try {
     await fs.access(docsDirectoryPath);
@@ -12,10 +12,20 @@ export async function run() {
   }
 
   await generateSwaggerFile({
-    schemasGlob: path.join(__dirname, "src", "dtos", "**", "*.dto.ts"),
+    schemasGlob: path.join(
+      __dirname,
+      "src",
+      "infra",
+      "http",
+      "dtos",
+      "**",
+      "*.dto.ts",
+    ),
     controllersGlob: path.join(
       __dirname,
       "src",
+      "infra",
+      "http",
       "controllers",
       "**",
       "*.controller.ts",
