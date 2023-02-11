@@ -4,7 +4,7 @@ import {
   clearMongoMemoryServer,
   connectMongoMemoryServer,
   disconnectMongoMemoryServer,
-} from "../helpers/mongoTestSetup";
+} from "@tests/helpers/mongoTestSetup";
 
 describe("MongoTestRepository", () => {
   beforeAll(async () => {

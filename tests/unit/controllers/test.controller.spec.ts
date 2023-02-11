@@ -3,7 +3,7 @@ import { container, DependencyContainer } from "tsyringe";
 
 import { TestUseCaseInterface } from "@application/useCases/test.use-case";
 import { TestController } from "@infra/http/controllers/test.controller";
-import { TestUseCaseStub } from "@tests/useCases/stubs/test.use-case.stub";
+import { TestUseCaseStub } from "@tests/unit/useCases/stubs/test.use-case.stub";
 
 let childContainer: DependencyContainer;
 
